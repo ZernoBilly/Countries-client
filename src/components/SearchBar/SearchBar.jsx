@@ -1,23 +1,44 @@
 import React from "react";
-import { InputBase, Grid, Typography } from "@material-ui/core";
+import { InputBase, Grid, Typography, IconButton } from "@material-ui/core";
 import SearchIcon from "@material-ui/icons/Search";
+import HighlightOffIcon from "@material-ui/icons/HighlightOff";
 
 import useStyles from "./styles";
 
-const SearchBar = () => {
+const SearchBar = ({ setCountrySearch, countrySearch, filteredCountries }) => {
   const classes = useStyles();
+
+  const handleChange = (e) => {
+    setCountrySearch(e.target.value);
+  };
+
+  const clear = () => {
+    setCountrySearch("");
+  };
+
   return (
     <Grid container className={classes.searchContainer}>
       <Grid item xs={12} className={classes.searchItem}>
         <InputBase
+          value={countrySearch}
           placeholder="Search..."
           className={classes.input}
+          onChange={handleChange}
         ></InputBase>
-        <SearchIcon className={classes.searchIcon} />
+        {!countrySearch ? (
+          <SearchIcon className={classes.searchIcon} />
+        ) : (
+          <IconButton onClick={clear} className={classes.searchButton}>
+            {" "}
+            <HighlightOffIcon className={classes.searchIcon} />
+          </IconButton>
+        )}
       </Grid>
       <Grid item xs={12} className={classes.searchItem}>
         <Typography className={classes.infoText}>
-          Please, more specific
+          {filteredCountries.length >= 10 && countrySearch !== ""
+            ? "Too many results"
+            : ""}
         </Typography>
       </Grid>
     </Grid>

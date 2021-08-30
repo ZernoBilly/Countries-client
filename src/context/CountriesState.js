@@ -11,10 +11,14 @@ const CountriesState = (props) => {
       capital: "",
       population: "",
       currencies: [{}],
+      flag: "",
+      region: "",
     },
   ];
 
   const [state, dispatch] = useReducer(CountriesReducer, initState);
+  const [countrySearch, setCountrySearch] = useState("");
+  const [filteredCountries, setFilteredCountries] = useState([{}]);
 
   const setCountries = (countries) => {
     dispatch({
@@ -28,6 +32,10 @@ const CountriesState = (props) => {
       value={{
         state,
         setCountries,
+        countrySearch,
+        setCountrySearch,
+        filteredCountries,
+        setFilteredCountries,
       }}
     >
       {props.children}

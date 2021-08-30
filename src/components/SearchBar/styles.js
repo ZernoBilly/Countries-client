@@ -28,5 +28,14 @@ export default makeStyles((theme) => ({
     fontSize: "3.2rem",
     borderTopRightRadius: "0.5rem",
     borderBottomRightRadius: "0.5rem",
+
+    "&:hover": {
+      backgroundColor: theme.palette.optional.light,
+    },
+  },
+
+  searchButton: {
+    margin: "0",
+    padding: "0",
   },
 }));
