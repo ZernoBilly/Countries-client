@@ -7,6 +7,7 @@ import CountriesContext from "../../context/context";
 import Header from "../Header/Header";
 import SearchBar from "../SearchBar/SearchBar";
 import CountriesList from "../CountriesList/CountriesList";
+import SingleCountry from "../SingleCountry/SingleCountry";
 
 import useStyles from "./styles";
 
@@ -53,6 +54,7 @@ const Countries = () => {
   console.log(state);
   console.log(countrySearch);
   console.log(filteredCountries);
+
   return (
     <Container>
       <Grid container>
@@ -61,7 +63,18 @@ const Countries = () => {
           countrySearch={countrySearch}
           filteredCountries={filteredCountries}
         />
-        <CountriesList state={state} filteredCountries={filteredCountries} />
+        {filteredCountries.length === 1 && countrySearch !== "" ? (
+          <SingleCountry
+            setCountrySearch={setCountrySearch}
+            filteredCountries={filteredCountries}
+          />
+        ) : (
+          <CountriesList
+            state={state}
+            filteredCountries={filteredCountries}
+            setFilteredCountries={setFilteredCountries}
+          />
+        )}
       </Grid>
     </Container>
   );

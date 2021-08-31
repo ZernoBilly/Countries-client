@@ -9,5 +9,13 @@ export default makeStyles((theme) => ({
   listItem: {
     backgroundColor: theme.palette.primary.main,
     borderRadius: "1rem",
+    marginTop: "0.5rem",
+  },
+  avatarItem: {},
+  avatarPic: {
+    width: "5rem",
+  },
+  listText: {
+    marginLeft: "1rem",
   },
 }));

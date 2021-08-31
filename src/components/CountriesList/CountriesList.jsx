@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import {
   List,
   ListItem,
@@ -10,16 +10,12 @@ import {
 
 import useStyles from "./styles";
 
-const CountriesList = ({ filteredCountries }) => {
+const CountriesList = ({ filteredCountries, setFilteredCountries }) => {
   const classes = useStyles();
 
-  const [selectedIndex, setSelectedIndex] = useState();
-
   const handleClick = (event, idx) => {
-    setSelectedIndex(idx);
+    setFilteredCountries([filteredCountries[idx]]);
   };
-
-  console.log(selectedIndex);
 
   return (
     <Grid container className={classes.listContainer}>
@@ -32,12 +28,15 @@ const CountriesList = ({ filteredCountries }) => {
                 className={classes.listItem}
                 onClick={(event) => handleClick(event, idx)}
               >
-                <ListItemAvatar>
-                  <Avatar>
-                    <img src={country.flag} />
-                  </Avatar>
+                <ListItemAvatar className={classes.avatarItem}>
+                  <Avatar
+                    variant="rounded"
+                    src={country.flag}
+                    className={classes.avatarPic}
+                  ></Avatar>
                 </ListItemAvatar>
                 <ListItemText
+                  className={classes.listText}
                   primary={country.name}
                   secondary={country.region}
                 />
