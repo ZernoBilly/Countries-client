@@ -13,6 +13,10 @@ const CountriesState = (props) => {
       currencies: [{}],
       flag: "",
       region: "",
+      subregion: "",
+      area: "",
+      timezones: [],
+      languages: [{}],
     },
   ];
 

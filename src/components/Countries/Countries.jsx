@@ -46,14 +46,10 @@ const Countries = () => {
 
   const fetchCountries = async () => {
     const { data } = await axios.get(
-      "https://restcountries.eu/rest/v2/all?fields=name;capital;currencies;flag;region"
+      "https://restcountries.eu/rest/v2/all?fields=name;capital;currencies;flag;region;subregion;population;area;timezones;currencies;languages"
     );
     setCountries(data);
   };
-
-  console.log(state);
-  console.log(countrySearch);
-  console.log(filteredCountries);
 
   return (
     <Container>

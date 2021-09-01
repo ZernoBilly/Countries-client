@@ -8,13 +8,13 @@ import useStyles from "./styles";
 const TopBar = () => {
   const classes = useStyles();
   return (
-    <AppBar>
+    <AppBar className={classes.AppBar}>
       <Toolbar className={classes.toolBar}>
-        <Typography className={classes.title} variant="h4" component="h1">
+        <Typography className={classes.title} variant="h5" component="h1">
           Countries
         </Typography>
-        <IconButton>
-          <Typography>TopTen</Typography>
+        <IconButton className={classes.button}>
+          <Typography className={classes.text}>TopTen</Typography>
           <ForwardIcon />
         </IconButton>
       </Toolbar>

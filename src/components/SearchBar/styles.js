@@ -18,6 +18,7 @@ export default makeStyles((theme) => ({
     borderTopLeftRadius: "0.5rem",
     borderBottomLeftRadius: "0.5rem",
     fontSize: "2rem",
+    transition: "0.2s",
 
     "&:hover": {
       backgroundColor: theme.palette.optional.light,
@@ -28,6 +29,7 @@ export default makeStyles((theme) => ({
     fontSize: "3.2rem",
     borderTopRightRadius: "0.5rem",
     borderBottomRightRadius: "0.5rem",
+    transition: "0.2s",
 
     "&:hover": {
       backgroundColor: theme.palette.optional.light,

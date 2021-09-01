@@ -28,6 +28,10 @@ const theme = createTheme({
       light: "#82f3ff",
     },
   },
+
+  typography: {
+    fontFamily: ["Playfair Display", "Hina Mincho"],
+  },
 });
 
 export default theme;
