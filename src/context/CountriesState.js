@@ -17,6 +17,7 @@ const CountriesState = (props) => {
       area: "",
       timezones: [],
       languages: [{}],
+      callingCodes: [],
     },
   ];
 

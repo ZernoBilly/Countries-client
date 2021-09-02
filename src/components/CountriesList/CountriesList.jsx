@@ -6,6 +6,7 @@ import {
   Avatar,
   ListItemText,
   Grid,
+  Grow,
 } from "@material-ui/core";
 
 import useStyles from "./styles";
@@ -22,25 +23,27 @@ const CountriesList = ({ filteredCountries, setFilteredCountries }) => {
       <List>
         {filteredCountries.length <= 10
           ? filteredCountries.map((country, idx) => (
-              <ListItem
-                button
-                key={idx}
-                className={classes.listItem}
-                onClick={(event) => handleClick(event, idx)}
-              >
-                <ListItemAvatar className={classes.avatarItem}>
-                  <Avatar
-                    variant="rounded"
-                    src={country.flag}
-                    className={classes.avatarPic}
-                  ></Avatar>
-                </ListItemAvatar>
-                <ListItemText
-                  className={classes.listText}
-                  primary={country.name}
-                  secondary={country.region}
-                />
-              </ListItem>
+              <Grow in={true} timeout={500} easyInOut>
+                <ListItem
+                  button
+                  key={idx}
+                  className={classes.listItem}
+                  onClick={(event) => handleClick(event, idx)}
+                >
+                  <ListItemAvatar className={classes.avatarItem}>
+                    <Avatar
+                      variant="rounded"
+                      src={country.flag}
+                      className={classes.avatarPic}
+                    ></Avatar>
+                  </ListItemAvatar>
+                  <ListItemText
+                    className={classes.listText}
+                    primary={country.name}
+                    secondary={country.region}
+                  />
+                </ListItem>
+              </Grow>
             ))
           : ""}
       </List>

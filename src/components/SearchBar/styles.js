@@ -30,6 +30,7 @@ export default makeStyles((theme) => ({
     borderTopRightRadius: "0.5rem",
     borderBottomRightRadius: "0.5rem",
     transition: "0.2s",
+    color: theme.palette.secondary.dark,
 
     "&:hover": {
       backgroundColor: theme.palette.optional.light,

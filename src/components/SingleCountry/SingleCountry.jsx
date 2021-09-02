@@ -8,7 +8,21 @@ import { InfoField } from "./InfoField/InfoField";
 const SingleCountry = ({ setCountrySearch, filteredCountries }) => {
   const classes = useStyles();
 
-  console.log(filteredCountries[0].currencies[0].name);
+  const numberWithCommas = (value) => {
+    if (value > 1000) {
+      return value.toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ");
+    } else {
+      return value;
+    }
+  };
+
+  const languages = filteredCountries[0].languages.map((item) => {
+    return item.name;
+  });
+
+  const population = numberWithCommas(filteredCountries[0].population);
+
+  const area = numberWithCommas(filteredCountries[0].area);
 
   return (
     <>
@@ -29,24 +43,25 @@ const SingleCountry = ({ setCountrySearch, filteredCountries }) => {
           <InfoField value={filteredCountries[0].capital} icon={"capital"} />
         </Grid>
         <Grid item xs={10} sm={7} className={classes.valueItem}>
-          <InfoField
-            value={filteredCountries[0].population}
-            marking={"ppl"}
-            icon={"population"}
-          />
+          <InfoField value={population} marking={"ppl"} icon={"population"} />
         </Grid>
         <Grid item xs={10} sm={7} className={classes.valueItem}>
-          <InfoField
-            value={filteredCountries[0].area}
-            marking={"sqm"}
-            icon={"area"}
-          />
+          <InfoField value={area} marking={"km2"} icon={"area"} />
         </Grid>
         <Grid item xs={10} sm={7} className={classes.valueItem}>
           <InfoField
             value={filteredCountries[0].currencies[0].name}
             marking={filteredCountries[0].currencies[0].symbol}
             icon={"currencies"}
+          />
+        </Grid>
+        <Grid item xs={10} sm={7} className={classes.valueItem}>
+          <InfoField value={languages} icon={"languages"} />
+        </Grid>
+        <Grid item xs={10} sm={7} className={classes.valueItem}>
+          <InfoField
+            value={`+${filteredCountries[0].callingCodes}`}
+            icon={"callingCodes"}
           />
         </Grid>
       </Grid>

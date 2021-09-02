@@ -4,6 +4,8 @@ import LocationCityIcon from "@material-ui/icons/LocationCity";
 import PeopleAltIcon from "@material-ui/icons/PeopleAlt";
 import LandscapeIcon from "@material-ui/icons/Landscape";
 import AttachMoneyIcon from "@material-ui/icons/AttachMoney";
+import GTranslateIcon from "@material-ui/icons/GTranslate";
+import CallIcon from "@material-ui/icons/Call";
 
 import useStyles from "./styles";
 
@@ -20,6 +22,10 @@ export const InfoField = ({ value, marking, icon }) => {
         return <LandscapeIcon className={classes.icon} />;
       case "currencies":
         return <AttachMoneyIcon className={classes.icon} />;
+      case "languages":
+        return <GTranslateIcon className={classes.icon} />;
+      case "callingCodes":
+        return <CallIcon className={classes.icon} />;
     }
   };
 
@@ -27,7 +33,7 @@ export const InfoField = ({ value, marking, icon }) => {
     <Box className={classes.infoFieldBox}>
       {icons(icon)}
       <Typography variant="h5" className={classes.valueText}>
-        {value}
+        {Array.isArray(value) ? value.join(", ") : value}
       </Typography>
       <Typography variant="subtitle2" className={classes.marking}>
         {marking}
