@@ -41,4 +41,8 @@ export default makeStyles((theme) => ({
     margin: "0",
     padding: "0",
   },
+  infoText: {
+    color: theme.palette.warning.main,
+    fontSize: "1.2rem",
+  },
 }));

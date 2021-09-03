@@ -6,7 +6,8 @@ export default makeStyles((theme) => ({
   app: {
     padding: "0",
     margin: "0",
-    height: "100vh",
+    minHeight: "100vh",
+    height: "100%",
     backgroundImage: `url(${bgImage})`,
   },
 }));

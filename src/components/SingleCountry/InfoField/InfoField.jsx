@@ -6,6 +6,7 @@ import LandscapeIcon from "@material-ui/icons/Landscape";
 import AttachMoneyIcon from "@material-ui/icons/AttachMoney";
 import GTranslateIcon from "@material-ui/icons/GTranslate";
 import CallIcon from "@material-ui/icons/Call";
+import MyLocationIcon from "@material-ui/icons/MyLocation";
 
 import useStyles from "./styles";
 
@@ -26,6 +27,8 @@ export const InfoField = ({ value, marking, icon }) => {
         return <GTranslateIcon className={classes.icon} />;
       case "callingCodes":
         return <CallIcon className={classes.icon} />;
+      case "location":
+        return <MyLocationIcon className={classes.icon} />;
     }
   };
 
