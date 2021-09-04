@@ -14,13 +14,15 @@ export default makeStyles((theme) => ({
     alignItems: "center",
     marginTop: "1rem",
     marginBottom: "1rem",
+    marginRight: "0.3rem",
+    marginLeft: "0.3rem",
     height: "7rem",
   },
   countryNameTitle: {
     fontSize: "3rem",
 
     [theme.breakpoints.down("sm")]: {
-      fontSize: "1.2rem",
+      fontSize: "1.3rem",
     },
   },
 
@@ -33,6 +35,7 @@ export default makeStyles((theme) => ({
     justifyContent: "center",
     alignItems: "center",
     marginTop: "1rem",
+    marginRight: "1rem",
     marginLeft: "1rem",
     background: "none",
   },
