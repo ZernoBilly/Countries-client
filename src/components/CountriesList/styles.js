@@ -10,6 +10,7 @@ export default makeStyles((theme) => ({
     backgroundColor: theme.palette.primary.main,
     borderRadius: "1rem",
     marginTop: "0.5rem",
+    minWidth: "15rem",
     transition: "0.2s",
 
     "&:hover": {

@@ -23,18 +23,19 @@ const CountriesList = ({ filteredCountries, setFilteredCountries }) => {
       <List>
         {filteredCountries.length <= 10
           ? filteredCountries.map((country, idx) => (
-              <Grow in={true} timeout={500} easyInOut>
+              <Grow in={true} timeout={500} key={idx}>
                 <ListItem
                   button
                   key={idx}
                   className={classes.listItem}
                   onClick={(event) => handleClick(event, idx)}
                 >
-                  <ListItemAvatar className={classes.avatarItem}>
+                  <ListItemAvatar className={classes.avatarItem} key={idx}>
                     <Avatar
                       variant="rounded"
                       src={country.flag}
                       className={classes.avatarPic}
+                      key={idx}
                     ></Avatar>
                   </ListItemAvatar>
                   <ListItemText

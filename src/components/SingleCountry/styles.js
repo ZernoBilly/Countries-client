@@ -15,12 +15,9 @@ export default makeStyles((theme) => ({
     marginTop: "1rem",
     marginBottom: "1rem",
     height: "7rem",
-    opacity: "1",
   },
   countryNameTitle: {
-    color: theme.palette.primary.light,
     fontSize: "3rem",
-    opacity: "1",
 
     [theme.breakpoints.down("sm")]: {
       fontSize: "1.2rem",
@@ -52,11 +49,11 @@ export default makeStyles((theme) => ({
     marginBottom: "2rem",
   },
   closeButton: {
-    background: theme.palette.info.main,
+    background: theme.palette.optional.main,
     elevation: "theme{10}",
 
     "&:hover": {
-      backgroundColor: theme.palette.warning.main,
+      backgroundColor: theme.palette.secondary.dark,
       elevation: "theme{0}",
     },
   },
@@ -68,7 +65,7 @@ export default makeStyles((theme) => ({
 
     "&:hover": {
       elevation: "theme{0}",
-      color: theme.palette.secondary.light,
+      color: theme.palette.optional.main,
     },
   },
 }));

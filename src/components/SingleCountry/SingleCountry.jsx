@@ -14,7 +14,6 @@ import southAmerica from "../../images/southAmerica.jpg";
 import caribbean from "../../images/caribbean.jpg";
 import northernAfrica from "../../images/northernAfrica.jpg";
 import westernCentralAfrica from "../../images/westernCentralAfrica.jpg";
-import easternAfrica from "../../images/easternAfrica.jpg";
 import westernAsia from "../../images/westernAsia.jpg";
 import centralAsia from "../../images/centralAsia.jpg";
 import southernAsia from "../../images/southernAsia.jpg";
@@ -56,7 +55,7 @@ const SingleCountry = ({ setCountrySearch, filteredCountries }) => {
       case "Southern Africa":
         return westernCentralAfrica;
       case "Eastern Africa":
-        return easternAfrica;
+        return westernCentralAfrica;
       case "Western Asia":
         return westernAsia;
       case "Central Asia":
@@ -75,6 +74,18 @@ const SingleCountry = ({ setCountrySearch, filteredCountries }) => {
         return polynesia;
       case "Micronesia":
         return polynesia;
+      default:
+        return "northernEurope";
+    }
+  };
+
+  const fontColorSelector = (subregion) => {
+    switch (subregion) {
+      case "Eastern Europe":
+        return "inherit";
+
+      default:
+        return "primary";
     }
   };
 
@@ -110,11 +121,19 @@ const SingleCountry = ({ setCountrySearch, filteredCountries }) => {
         }}
       >
         <Grid item xs={12} sm={10} className={classes.titleItem}>
-          <Typography className={classes.countryNameTitle} variant="h5">
+          <Typography
+            className={classes.countryNameTitle}
+            variant="h5"
+            color={fontColorSelector(filteredCountries[0].subregion)}
+          >
             {filteredCountries[0].name}
           </Typography>
 
-          <img src={filteredCountries[0].flag} className={classes.image} />
+          <img
+            src={filteredCountries[0].flag}
+            className={classes.image}
+            alt="flag"
+          />
         </Grid>
       </Grid>
       <Grid container className={classes.valuesContainer} xs={12}>

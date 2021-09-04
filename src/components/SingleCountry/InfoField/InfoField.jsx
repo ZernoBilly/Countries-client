@@ -29,6 +29,8 @@ export const InfoField = ({ value, marking, icon }) => {
         return <CallIcon className={classes.icon} />;
       case "location":
         return <MyLocationIcon className={classes.icon} />;
+      default:
+        return "";
     }
   };
 

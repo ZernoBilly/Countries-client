@@ -5,8 +5,6 @@ import theme from "./theme";
 
 import CountriesState from "./context/CountriesState";
 
-import bgImage from "./images/bg-image.jpg";
-
 import Home from "./pages/Home";
 
 import useStyles from "./styles";

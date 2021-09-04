@@ -1,6 +1,12 @@
 import React from "react";
-import { AppBar, Toolbar, Typography, IconButton } from "@material-ui/core";
-import PublicIcon from "@material-ui/icons/Public";
+import {
+  AppBar,
+  Toolbar,
+  Typography,
+  IconButton,
+  Fab,
+} from "@material-ui/core";
+
 import ForwardIcon from "@material-ui/icons/Forward";
 
 import useStyles from "./styles";
@@ -13,10 +19,9 @@ const TopBar = () => {
         <Typography className={classes.title} variant="h5" component="h1">
           Countries
         </Typography>
-        <IconButton className={classes.button}>
-          <Typography className={classes.text}>TopTen</Typography>
-          <ForwardIcon />
-        </IconButton>
+        <Fab className={classes.button} size="medium">
+          <ForwardIcon className={classes.icon} />
+        </Fab>
       </Toolbar>
     </AppBar>
   );

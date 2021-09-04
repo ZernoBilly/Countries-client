@@ -1,10 +1,9 @@
-import React, { useState, useEffect, useContext } from "react";
+import React, { useEffect, useContext } from "react";
 import axios from "axios";
 import { Grid, Container } from "@material-ui/core";
 
 import CountriesContext from "../../context/context";
 
-import Header from "../Header/Header";
 import SearchBar from "../SearchBar/SearchBar";
 import CountriesList from "../CountriesList/CountriesList";
 import SingleCountry from "../SingleCountry/SingleCountry";
@@ -22,8 +21,6 @@ const Countries = () => {
     filteredCountries,
     setFilteredCountries,
   } = useContext(CountriesContext);
-
-  const [correctSearch, setCorrectSearch] = useState(false);
 
   useEffect(() => {
     fetchCountries();
@@ -53,7 +50,7 @@ const Countries = () => {
 
   return (
     <Container>
-      <Grid container>
+      <Grid container className={classes.mainContainer}>
         <SearchBar
           setCountrySearch={setCountrySearch}
           countrySearch={countrySearch}

@@ -16,8 +16,6 @@ const SearchBar = ({ setCountrySearch, countrySearch, filteredCountries }) => {
     setCountrySearch("");
   };
 
-  console.log(filteredCountries);
-
   return (
     <Grid container className={classes.searchContainer}>
       <Grid item xs={12} className={classes.searchItem}>
@@ -38,7 +36,7 @@ const SearchBar = ({ setCountrySearch, countrySearch, filteredCountries }) => {
       </Grid>
       <Grid item xs={12} className={classes.searchItem}>
         <Typography className={classes.infoText}>
-          {countrySearch && filteredCountries.length == 0
+          {countrySearch && filteredCountries.length === 0
             ? "No match found!"
             : filteredCountries.length >= 10 && countrySearch !== ""
             ? "Too many results!"
