@@ -6,7 +6,7 @@ import TopBar from "../components/TopBar/TopBar";
 const Home = () => {
   return (
     <>
-      <TopBar />
+      <TopBar title={"Countries"} link={"/topten"} />
       <Countries />
     </>
   );

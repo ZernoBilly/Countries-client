@@ -1,27 +1,25 @@
 import React from "react";
-import {
-  AppBar,
-  Toolbar,
-  Typography,
-  IconButton,
-  Fab,
-} from "@material-ui/core";
+import { AppBar, Toolbar, Typography, Fab } from "@material-ui/core";
+
+import { Link } from "react-router-dom";
 
 import ForwardIcon from "@material-ui/icons/Forward";
 
 import useStyles from "./styles";
 
-const TopBar = () => {
+const TopBar = ({ title, link }) => {
   const classes = useStyles();
   return (
     <AppBar className={classes.AppBar}>
       <Toolbar className={classes.toolBar}>
         <Typography className={classes.title} variant="h5" component="h1">
-          Countries
+          {title}
         </Typography>
-        <Fab className={classes.button} size="medium">
-          <ForwardIcon className={classes.icon} />
-        </Fab>
+        <Link to={link}>
+          <Fab className={classes.button} size="medium">
+            <ForwardIcon className={classes.icon} />
+          </Fab>
+        </Link>
       </Toolbar>
     </AppBar>
   );

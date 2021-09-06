@@ -31,7 +31,7 @@ export default makeStyles((theme) => ({
     fontSize: "2.5rem",
     position: "absolute",
     transition: "0.5s",
-    padding: "3.2rem, 3.2rem",
+    padding: "0.3rem",
 
     "&:hover": {
       color: theme.palette.optional.light,

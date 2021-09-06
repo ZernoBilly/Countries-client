@@ -62,6 +62,7 @@ export default makeStyles((theme) => ({
   },
   closeButtonIcon: {
     color: theme.palette.secondary.dark,
+    padding: "0.3rem",
     fontSize: "3rem",
     transition: "0.2s",
     elevation: "theme{10}",
